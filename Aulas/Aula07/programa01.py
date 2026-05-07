@@ -19,7 +19,6 @@ while True:
     print('\n============= Sistema de Carros 🚗 =============')
     print('1 - Cadastrar Carros')
     print('2 - Listar Carros')
-    print('3 - Deletar Carros')
     print('0 - Sair')
 
     opcao = input('Escolha uma opção: ')
@@ -58,28 +57,7 @@ while True:
                 linhas = arquivo.readlines()
 
                 print(type(linhas))
-                print(linhas.strip())    
-    #delete
-    elif opcao == '3':
-        print('\n 📋 Lista de carros')
-        for carro in carros:
-            print(f'ID: {carro['id']} | Modelo {carro['modelo']} | Preço {carro['preco']} | Marca {carro['marca']}')
-
-        id_busca = int(input('Digite o ID do carro para deletar: '))
-
-        encontrado = False
-
-        for carro in carros:
-            if carro ['id'] == id_busca:
-                carros.remove(carro)
-                print('✅ Carro deletado com sucesso!')
-                encontrado = True
-                break
-        if not encontrado:
-            print('❌ Carro não encontrado!')
-
-        time.sleep(3)
-        os.system('cls')
+                print(linhas)    
 
     #Sair
     elif opcao == '0':
