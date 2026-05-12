@@ -10,11 +10,9 @@
 '''
 import os
 import time
-
-carros = []
+carro= []
 proximo_id = 1
 
-os.system('cls')
 while True:
     print('\n============= Sistema de Carros 🚗 =============')
     print('1 - Cadastrar Carros')
@@ -27,17 +25,26 @@ while True:
 
     #create
     if opcao == '1':
-        modelo = input('Digite o modelo do carro: ').title()
-        preco = float(input('Digite o preço: '))
-        marca = input('Digite a marca: ').title()
+        while True:
+            modelo = input("Digite o modelo: ").title()
+            preço = input("Digite o preço: ").title()
+            marca = input("Digite o marca: ").title()
+            carros = {
+                "id"         : proximo_id,
+                "modelo":modelo,
+                "preço":preço,
+                "marca":marca
+            }
+            with open("carros.txt",'a')as arquivo:
+                arquivo.write(f"{modelo}")
+                arquivo.write(f"{preço}")
+                arquivo.write(f"{marca}\n")
 
-        carros = {
-            "id"         : proximo_id,
-        }
-        with open('infor_carros.txt','w') as arquivo:
-            arquivo.write(f'{modelo}\n')
-            arquivo.write(f'{preco}\n')
-            arquivo.write(f'{marca}\n')
+            sair = input("Deseja sair?s/n").lower()
+
+            if sair =='s':
+                break    
+
 
 
         proximo_id += 1
@@ -53,11 +60,9 @@ while True:
             print('❗Nenhum carro cadastrado.')
         else:
             print('\n 📋 Lista de carros')
-            with open('infor_carros.txt','r')as arquivo:
-                linhas = arquivo.readlines()
-
-                print(type(linhas))
-                print(linhas)    
+            with open('carros.txt','r')as arquivo:
+                for linhas in arquivo:
+                    print(linhas.strip())  
 
     #Sair
     elif opcao == '0':
@@ -70,6 +75,7 @@ while True:
             vazio = "-" * (total -1)
             print(f'\r[{barra}] {porcentagem}%', end="")
             time.sleep(0.2)
+        del carro[1:5]
         break
 
     else:
