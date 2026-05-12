@@ -1,0 +1,22 @@
+Linguagem de programação evoluíram pela necessidade da computação
+Cronologia das linguagens
+1949 - ASM
+1957 - FORTRAN
+1959 - COBOL
+1964 - BASIC
+1970 - PASCAL
+1972 - C
+1972 - SQL
+1983 - C++
+1983 - OBJ_C
+1991 - PYTHON
+1993 - RUBY
+1995 - JAVA
+1995 - PHP
+1995 - JAVASCRIPT
+2000 - C#
+2014 - SWIFT
+ferramenta de desenvolvimento
+Visual Estúdio
+editor de texto
+v.s. code

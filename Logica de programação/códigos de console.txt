@@ -1,0 +1,5 @@
+códigos de console
+cd - navega em diretório
+cd .. - Volta nível diretório Analise de Requisitos
+Ls - Lista o que tem do diretório Caminho
+Path
